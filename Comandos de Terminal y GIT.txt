@@ -1,0 +1,71 @@
+Comando    //   Explicación 
+
+pwd        //    Nos dice la carpeta actual donde estamos. 
+
+ls         //     Lista el contenido que tenemos dentro.
+ls -al     //     lista de manera ordenada y mas detallada.
+
+cd 	   //     entrar a una carpeta. 
+
+cd ..      //     entrar a la carpeta ANTERIOR. 
+
+cd xxx [presionar tecla TABULACIÓN] //   rellena con el restante del nombre de un archivo o carpeta.
+
+clear    //   limpia pantalla
+
+cat        //    muestra el contenido de un archivo. 
+
+history 	// comandos ejecutados anteriormente 
+
+git init  // crea un repositorio LOCAL en mi carpeta actual.
+
+git status  //  muestra el estado de como está mi repositorio. 
+
+git add <nombre archivo>  // sube el archivo o directorio al escenario (stage). 
+git add .  // sube todos los cambios al escenario
+git add --all  // mismo que anterior
+git add -A // mismo que anterior
+
+git commit -m "Primer Commit - Comit inicial"  //  sacamos una foto al ESCENARIO.
+
+git log   // listado de commit (fotos) hechas en el repositorio
+
+
+// SOLO EJECUTAR SI SALE WARNING DE CRLF
+git config core.autocrlf true
+
+git log --oneline --decorate --all --graph   // forma detalla de ver cambios
+
+git config --global alias.lg "log --oneline --decorate --all --graph"
+
+git  checkout -- <nombrearchivo>  // revierte los cambios y vuelve el archivo al estado anterior. 
+git  checkout -- . Volver a dejar todo como estaba en el ultimo commit : usar con cuidado porque podrías eliminar avance de tu trabajo actual. 
+
+git commit --amend
+
+vim 
+:q   // sale sin guardar
+:q!  // sale sin guardar de manera forzada.
+:wq   // guardar y salir.
+
+
+git reset --soft HEAD^    //  quita el ultimo commit y deja los archivos en el escenario. Deja todo como si no se hubiera ejecutado el commit.   Si algun archivo tiene nuevas modificaciones, dirá que tiene modificacion pendientes en el escenario y al mismo tiempo puede tambien estar en el escenario. Solo que uno de los cambios no está aun en el escenario. 
+
+git reset --soft <numerocommit>  // quita todos los commit que existen hasta llegar al numero commit indicado. Deja los archivos en el stage.  
+
+git  reset --mixed <numerocommit>  // quita todos los commit hasta ese punto indicado y ademas deja los archivos fuera del stage.  Los cambios de los commit quitados siguen en nuestra carpeta. No se eliminan.
+
+git  reset --hard <numerocommit>  // quita todos los commit hasta ese commit indicado PERO ELIMINA TODOS LOS ARCHIVOS QUE ERAN PARTE DE ESOS COMIT. Es decir este comando nos deja tal como dejamos todo, al momento de hacer ese commit. Sin los archivos nuevos. 
+
+git tag -a <nombretag> // crea una etiqueta. 
+git push --tags  //  sube las etiquetas a mi repositorio REMOTO.
+
+git reflog -- detalle completo de todos los cambios.
+
+
+Crear alias en GIT:
+git  config --global alias.s "status -s -b"
+git config --global alias.lg "log --oneline --decorate --all --graph"
+
+git tag -a <anotacion> -m "mensaje del tag"  // crea un TAG en el repositorio LOCAL
+git push --tags  // sube los tag al repositorio REMOTO. 
